@@ -9,7 +9,9 @@ app.get('/', (req,res)=>{
 app.get('/hello',(req,res)=>{
   res.send("heyy from  /hello")
 })
-
+app.get('/heyy',(req,res)=>{
+  res.send("Hello Backend")
+})
 app.listen(port,()=>{
   console.log(` Server is running at : ${port}....`)
 })
