@@ -66,7 +66,7 @@ app.delete("/hello/:id", (req, res) => {
   data.splice(index, 1);
   return res.status(204).send("Data Deleted");
 });
-
+// .env is used to keep the api or the secret and add .env to git ignore so that it is not pushed to github
 const port = process.env.PORT ||3000;
 app.listen(port, () => {
   console.log(`Server is running at : ${port}`);
