@@ -17,7 +17,7 @@ app.post('/',(req,res)=>{
   data.push(newData)
   res.status(200).send(newData)
 
-  // it recieves JSON data 
+  // it recieves JSON data and sens it back with unique ID
 })
 
 // route to get all data
@@ -47,9 +47,12 @@ app.get('/hello/:id',(req,res)=>{
   key.name=name
   key.price=price
   res.status(200).send(key)
+
+  // we send the updated Data withy name and price , it changes with the given ID
  })
 
 //  deleting Data
+// to delete first we have to find Id and remove it with ID
 
 app.delete('/hello/:id',(req,res)=>{
   console.log("Delete")
