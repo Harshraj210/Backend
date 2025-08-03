@@ -2,10 +2,36 @@ import("dotenv/config");
 import express from "express";
 // CRUD --> create,read,update,delete
 
+import logger from "./logger.js";
+// custom logger from logger.js file
+import morgan from "morgan";
+// morgan --> Logs the HTTP req.
+
 const app = express();
 
 // app can understand JSON DATA
 app.use(express.json());
+
+const morganFormat = ":method :url :status :response-time ms";
+// format of file and ':' is important so that it is importtant in thhat format
+
+app.use(
+  morgan(morganFormat, {
+    stream: {
+      // write is simple method
+      write: (message) => {
+        const logObject = {
+          // method --> GET, PUT,POST
+          method: message.split(" ")[0],
+          url: message.split(" ")[1],
+          status: message.split(" ")[2],
+          responseTime: message.split(" ")[3],
+        };
+        logger.info(JSON.stringify(logObject));
+      },
+    },
+  })
+);
 
 // storing Data in array
 let data = [];
