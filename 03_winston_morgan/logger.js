@@ -25,7 +25,7 @@ const logger = createLogger({
     }),
     // it transports all the logs to app.log file
     new transports.File({ filename: "app.log" }),
-    // logs are saved in file app.log
+    // logs are saved in file app.log file
   ],
 });
 
