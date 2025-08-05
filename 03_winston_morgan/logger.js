@@ -20,7 +20,7 @@ const logger = createLogger({
   format: combine(colorize(), timestamp(), json()),
   transports: [
     new transports.Console({
-      // format should be in  consoleLogFormat 
+      // format should be in  consoleLogFormat
       format: consoleLogFormat,
     }),
     // it transports all the logs to app.log file
