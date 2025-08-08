@@ -72,4 +72,5 @@ app.listen(port, () => {
   console.log(`Server is running at : ${port}`);
   // server running at the port mentioned.
   // node modules should be inn .gitignore file
+  // .env is in git ignore
 });
